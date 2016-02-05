@@ -1,0 +1,44 @@
+/*
+Base Rules
+A Base rule is applied to an element using an
+element selector, a descendent selector, or
+a child selector, along with any pseudo-classes.
+It doesn’t include any class or ID selectors.
+It is defining the default styling for how that 
+element should look in all occurrences on the page.
+
+Source: https://www.smacss.com/book/type-base
+*/
+html, body{
+	min-width:100%;
+	min-height:100%;
+}
+
+h1 {
+	font-size:2em;
+}
+
+h2 {
+	font-size:1.5em;
+	&.subtitle{
+		position:relative;
+		border-bottom:1px dashed $buble;
+		padding:0.5em;
+	}
+}
+
+h3 {
+	font-size:1.3em;
+}
+
+h4 {
+	font-size:1.1em;
+}
+
+h5 {
+	font-size:1em;
+}
+
+p {
+	font-size:1em;
+}

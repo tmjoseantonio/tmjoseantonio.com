@@ -1,0 +1,180 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/components-font-awesome/scss/font-awesome.scss";
+// endbower
+
+// Paths
+	$fonts-path: "../fonts/";
+
+// Colors
+	$white: white;
+    $black: #131313;
+    $limey: #D1E751;
+    $lemon: #0DC69E;
+    $electric-blue: #4DBCE9;
+    $buble: #26ADE4;
+
+// Fonts
+	@font-face {
+	    font-family: 'fippsregular';
+	    src: url($fonts-path+'fipps-regular/fipps-regular-webfont.eot');
+	    src: url($fonts-path+'fipps-regular/fipps-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	         url($fonts-path+'fipps-regular/fipps-regular-webfont.woff2') format('woff2'),
+	         url($fonts-path+'fipps-regular/fipps-regular-webfont.woff') format('woff'),
+	         url($fonts-path+'fipps-regular/fipps-regular-webfont.ttf') format('truetype'),
+	         url($fonts-path+'fipps-regular/fipps-regular-webfont.svg#fippsregular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'pxlveticamedium';
+	    src: url($fonts-path+'pxlveticamedium/pxlvetica-webfont.eot');
+	    src: url($fonts-path+'pxlveticamedium/pxlvetica-webfont.eot?#iefix') format('embedded-opentype'),
+	         url($fonts-path+'pxlveticamedium/pxlvetica-webfont.woff2') format('woff2'),
+	         url($fonts-path+'pxlveticamedium/pxlvetica-webfont.woff') format('woff'),
+	         url($fonts-path+'pxlveticamedium/pxlvetica-webfont.ttf') format('truetype'),
+	         url($fonts-path+'pxlveticamedium/pxlvetica-webfont.svg#pxlveticamedium') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@font-face {
+	    font-family: 'press_start_2pregular';
+	    src: url($fonts-path+'press_start_2pregular/pressstart2p-regular-webfont.eot');
+	    src: url($fonts-path+'press_start_2pregular/pressstart2p-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	         url($fonts-path+'press_start_2pregular/pressstart2p-regular-webfont.woff2') format('woff2'),
+	         url($fonts-path+'press_start_2pregular/pressstart2p-regular-webfont.woff') format('woff'),
+	         url($fonts-path+'press_start_2pregular/pressstart2p-regular-webfont.ttf') format('truetype'),
+	         url($fonts-path+'press_start_2pregular/pressstart2p-regular-webfont.svg#press_start_2pregular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700);
+
+// Mixins
+	@mixin keyframes($animation-name) {
+	    @-webkit-keyframes #{$animation-name} {
+	        @content;
+	    }
+	    @-moz-keyframes #{$animation-name} {
+	        @content;
+	    }  
+	    @-ms-keyframes #{$animation-name} {
+	        @content;
+	    }
+	    @-o-keyframes #{$animation-name} {
+	        @content;
+	    }  
+	    @keyframes #{$animation-name} {
+	        @content;
+	    }
+	}
+
+	@mixin animation($str) {
+	  -webkit-animation: #{$str};
+	  -moz-animation: #{$str};
+	  -ms-animation: #{$str};
+	  -o-animation: #{$str};
+	  animation: #{$str};      
+	}
+
+	/**
+	 *  Sample
+	 *	@include keyframes(slide-down) {
+	 *	  0% { opacity: 1; }
+	 *	  90% { opacity: 0; }
+	 *	}
+	 *
+	 *	.element {
+	 *	  width: 100px;
+	 *	  height: 100px;
+	 *	  background: black;
+	 *	  @include animation('slide-down 5s 3');
+	 *	}
+	 **/
+
+	@mixin transition($args...) {
+	  -webkit-transition: $args;
+	  -moz-transition: $args;
+	  -ms-transition: $args;
+	  -o-transition: $args;
+	  transition: $args;
+	}
+
+	@mixin linear-gradient($top, $bottom){
+	    background: $top; /* Old browsers */
+	    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+	    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+	    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+	    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+	    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	}
+
+	@mixin radial-gradient($from, $to) {
+		background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+		background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+		background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+		background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+		background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+		background-color: $from;
+	}
+
+	/// Text Shadow
+	/// @param {Size} $x [2px] - X
+	/// @param {Size} $y [2px] - Y
+	/// @param {Size} $blur [2px] - Blur
+	/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+
+	@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+	    text-shadow: $x $y $blur $color;
+	}
+
+// Responsive mixins
+	@mixin breakpoint($class) {
+	  @if $class == xs {
+	    @media (max-width: 767px) { @content; }
+	  }
+	 
+	  @else if $class == sm {
+	    @media (min-width: 768px) { @content; }
+	  }
+	 
+	  @else if $class == md {
+	    @media (min-width: 992px) { @content; }
+	  }
+	 
+	  @else if $class == lg {
+	    @media (min-width: 1200px) { @content; }
+	  }
+	 
+	  @else {
+	    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+	  }
+	}
+
+// Helpers
+	.h{
+		&-center-block{
+			display:block;
+			margin:auto;
+		}
+
+		&-flex-middle{	
+		display: flex;
+			flex-direction: column;
+		  	justify-content: center;
+		}
+	}
+
+@import "scss/_base.scss";
+@import "scss/_layout.scss";
+@import "scss/_modules.scss";
+@import "scss/_state.scss";
+@import "scss/_theme.scss";

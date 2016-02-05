@@ -1,0 +1,66 @@
+/* Theme Rules
+Theme Rules aren't as often used within a project
+and because of that, they aren't included as part
+of the core types. Some projects may have a need
+for them, though, as we did when working on Yahoo! Mail.
+*/
+
+.t-eight-bit{
+	font-family:press_start_2pregular;
+	@include text-shadow(5px, 5px, 5px, rgba(0,0,0,.4));
+}
+
+.t-readable{
+	font-family: 'Source Sans Pro', sans-serif;	
+	font-size:1.5em;
+	@include breakpoint(xs){
+		font-size:1em;
+		p {
+			font-size:1.3em;
+		}
+	}
+}
+
+.t-color{
+	&-black{
+		color:$black;
+	}
+	&-white{
+		color:$white;
+	}
+	&-limey{
+		color:$limey;
+	}
+	&-electric-blue{
+		color:$electric-blue;
+	}
+	&-buble{
+		color:$buble;
+	}
+
+	&-bg-black{
+		background-color:$black;
+	}
+	&-bg-white{
+		background-color:$white;
+	}
+	&-bg-limey{
+		background-color:$limey;
+	}
+	&-bg-electric-blue{
+		background-color:$electric-blue;
+	}
+	&-bg-buble{
+		background-color:$buble;
+	}
+
+	&-bg-black-radial-gradient{
+		@include radial-gradient(lighten($black, 15%), $black);
+	}
+	&-bg-blue-radial-gradient{
+		@include radial-gradient($electric-blue, $buble);
+	}
+	&-bg-white-gradient{
+		@include radial-gradient(darken($white, 5%), $white);
+	}
+}

@@ -1,0 +1,170 @@
+/* 
+Module Rules
+
+As briefly mentioned in the previous section,
+a Module is a more discrete component of the
+page. It is your navigation bars and your
+carousels and your dialogs and your widgets
+and so on. This is the meat of the page.
+Modules sit inside Layout components.
+Modules can sometimes sit within other Modules, too.
+Each Module should be designed to exist as a
+standalone component. In doing so,
+the page will be more flexible. If done right,
+Modules can easily be moved to different parts
+of the layout without breaking.
+
+Source: https://www.smacss.com/book/type-module
+*/
+
+.m-big-title{
+	
+}
+
+.m-page-title{
+	font-size:4vmin;
+	@include breakpoint(xs) {
+		font-size:3vmax;
+		small {
+			font-size:2.8vmax;
+		}
+	}
+}
+
+.m-character{
+	background-image:url(../images/jose_tovar_sprite.png);
+	background-position: 0px 0px;
+	width:(864/8)+px;
+	height:(280/2)+px;
+}
+
+.m-button{
+	border-radius:0;
+	&.btn-success{
+		background-color:darken($limey, 30%);
+		border-color:darken($limey, 30%);
+		&:active:focus{
+			background-color:$limey;
+			border-color:$limey;
+		}
+	}
+	&.btn-primary{
+		background-color:$electric-blue;
+		border-color:$electric-blue;
+		&:active:focus{
+			background-color:$electric-blue;
+			border-color:$electric-blue;
+		}
+	}
+	&.btn-danger{
+		&:active:focus{
+					
+		}
+	}
+	&.btn-spaced{
+		margin-top:1em;
+		margin-bottom:1em;
+	}
+
+	&-homescreen{
+		@include transition(all 0.5s ease);
+
+		&.btn-default{
+			background-color:transparent;
+			border-color:transparent;
+			color:white;
+			&:before{
+				content: "[ ]";
+				display:inline-block;
+				color:$buble;
+			}
+
+			&:active:focus,
+			&:hover{
+				background-color:transparent;
+				border-color:transparent;
+				&:before{
+					display:inline-block;
+					content: "[X]";
+				}
+			}
+		}
+	}
+
+}
+
+.m-article{
+	&>header{
+		border-bottom:2px solid $electric-blue;
+		padding:15px 0;
+		h1{
+			line-height: 1em;
+		}
+	}
+	&-content{
+		padding:15px 0;
+	}
+	&>footer{
+		padding:15px 0;
+		border-bottom:1px dashed $electric-blue;
+	}
+}
+
+.m-skillbadges{
+	padding:15px 0;
+	.m-badge{
+		margin:5px;
+		display:flex;
+		flex-direction: column;
+		height:150px;
+	  	justify-content: center;
+  		text-align: center;
+	}
+}
+
+
+// Other elements
+	#scrollUp{
+		right:15px;
+		bottom:15px;
+		width:50px;
+		height: 50px;
+		background-color:$buble;
+		color:$white;
+		flex-direction: column;
+	  	justify-content: center;
+	  	text-align: center;
+	  	font-size:35px;
+	  	line-height: 50px;
+	  	@include transition(all 0.2s ease);
+	  	&:hover,
+	  	&:active,
+	  	&:focus{
+	  		text-decoration:none;
+	  		background-color:$electric-blue;
+	  		font-size:40px;
+	  	}
+	}
+
+	.slick-slide{
+		@include radial-gradient($electric-blue, darken($electric-blue, 10%))
+		border:1px dashed $white;
+		font-size:30px;
+		color:white;
+		padding:15px;
+		word-wrap: break-word;
+		@include text-shadow
+
+		&.slick-current{
+			font-size:40px;
+			@include radial-gradient($lemon, darken($lemon, 5%))
+		}
+
+		@include breakpoint(xs){
+			&.slick-current{
+				font-size:30px;
+				background-color:$lemon;
+			}
+		}
+		@include transition(all 0.5s ease);
+	}
