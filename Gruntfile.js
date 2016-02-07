@@ -364,7 +364,7 @@ module.exports = function (grunt) {
         },{
          expand: true,
          cwd: '<%= config.app %>',
-          src: '*.{ico,png}',
+          src: '*.{ico,png,jpg}',
           dest: '<%= config.dist %>'
         }]
       }
