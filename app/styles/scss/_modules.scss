@@ -130,6 +130,21 @@ Source: https://www.smacss.com/book/type-module
 	}
 }
 
+.m-inprogress{
+	position:fixed;
+	z-index:9999999;
+	top:20px;
+	left:0px;
+	background-color:$limey;
+	color:$black;
+	padding:15px;
+	line-height:1em;
+	font-size:12px;
+	p{
+		margin:0;
+		font-family:press_start_2pregular;
+	}
+}
 
 // Other elements
 	#scrollUp{
