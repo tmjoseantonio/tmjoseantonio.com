@@ -113,13 +113,20 @@ Source: https://www.smacss.com/book/type-module
 
 .m-skillbadges{
 	padding:15px 0;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:center;
 	.m-badge{
 		margin:5px;
+		padding:5px;
 		display:flex;
 		flex-direction: column;
-		height:150px;
+		height:120px;
+		width: 120px;
 	  	justify-content: center;
   		text-align: center;
+		border: 1px dashed $limey;
 	}
 }
 
@@ -145,27 +152,4 @@ Source: https://www.smacss.com/book/type-module
 	  		background-color:$electric-blue;
 	  		font-size:40px;
 	  	}
-	}
-
-	.slick-slide{
-		@include radial-gradient($electric-blue, darken($electric-blue, 10%))
-		border:1px dashed $white;
-		font-size:30px;
-		color:white;
-		padding:15px;
-		word-wrap: break-word;
-		@include text-shadow
-
-		&.slick-current{
-			font-size:40px;
-			@include radial-gradient($lemon, darken($lemon, 5%))
-		}
-
-		@include breakpoint(xs){
-			&.slick-current{
-				font-size:30px;
-				background-color:$lemon;
-			}
-		}
-		@include transition(all 0.5s ease);
 	}
