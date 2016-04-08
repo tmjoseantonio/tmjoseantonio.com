@@ -1,4 +1,4 @@
-/* 
+/*
 Module Rules
 
 As briefly mentioned in the previous section,
@@ -18,7 +18,7 @@ Source: https://www.smacss.com/book/type-module
 */
 
 .m-big-title{
-	
+
 }
 
 .m-page-title{
@@ -34,8 +34,8 @@ Source: https://www.smacss.com/book/type-module
 .m-character{
 	background-image:url(../images/jose_tovar_sprite.png);
 	background-position: 0px 0px;
-	width:(864/8)+px;
-	height:(280/2)+px;
+	width:(592/8)+px;
+	height:(184/2)+px;
 }
 
 .m-button{
@@ -58,7 +58,7 @@ Source: https://www.smacss.com/book/type-module
 	}
 	&.btn-danger{
 		&:active:focus{
-					
+
 		}
 	}
 	&.btn-spaced{
