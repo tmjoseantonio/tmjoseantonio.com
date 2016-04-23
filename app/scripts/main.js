@@ -6,7 +6,7 @@ $(".m-character").animateSprite({
     },
     loop: true,
     complete: function(){
-        
+
     }
 });
 
