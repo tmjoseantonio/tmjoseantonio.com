@@ -1,3 +1,9 @@
 [submodule "dist"]
 	path = dist
 	url = https://github.com/tmjoseantonio/tmjoseantonio.github.io.git
+[submodule "explorations-phaser"]
+	path = explorations-phaser
+	url = git@github.com:tmjoseantonio/explorations-phaser.git
+[submodule "app/explorations-phaser"]
+	path = app/explorations-phaser
+	url = git@github.com:tmjoseantonio/explorations-phaser.git
