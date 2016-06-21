@@ -366,7 +366,13 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= config.app %>',
-          src: 'explorations-phaser/{,*/}*.*',
+          src: [
+            'explorations-phaser/{,*/}*.jpg',
+            'explorations-phaser/{,*/}*.png',
+            'explorations-phaser/{,*/}*.html',
+            'explorations-phaser/{,*/}*.js',
+            'explorations-phaser/{,*/}*.css'
+          ],
           dest: '<%= config.dist %>'
         }]
       }
